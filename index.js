@@ -154,10 +154,10 @@ module.exports = function(css, options){
 
   function comment() {
     var pos = position();
-    if ('/' != css.charAt(0) || '*' != css.charAt(1)) return false;
+    if (css.charAt(0) !== '/' || css.charAt(1) !== '*') return false;
 
     var i = 2;
-    while ("" !== css.charAt(i) && ('*' != css.charAt(i) || '/' != css.charAt(i + 1))) ++i;
+    while (css.charAt(i) !== '' && (css.charAt(i) !== '*' || css.charAt(i + 1) !== '/')) ++i;
     i += 2;
 
     var str = css.slice(2, i - 2);
