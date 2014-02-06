@@ -4,7 +4,7 @@ var commentre = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g
 
 module.exports = function(css, options){
   options = options || {};
-  options.position = options.position === false ? false : true;
+  options.position = options.position !== false;
 
   /**
    * Positional.
